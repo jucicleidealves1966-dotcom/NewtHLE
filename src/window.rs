@@ -1683,7 +1683,7 @@ pub fn show_error_messagebox(window: Option<&Window>, error_message: &str) {
         messagebox::ButtonData {
             flags: messagebox::MessageBoxButtonFlag::NOTHING,
             button_id: 0,
-            text: "Open touchHLE directory",
+            text: "Open NewtHLE directory",
         },
         messagebox::ButtonData {
             flags: messagebox::MessageBoxButtonFlag::NOTHING,
@@ -1695,13 +1695,13 @@ pub fn show_error_messagebox(window: Option<&Window>, error_message: &str) {
     let Ok(clicked_button) = messagebox::show_message_box(
         messagebox::MessageBoxFlag::ERROR,
         &mbox,
-        "touchHLE crashed!",
-        &format!("touchHLE crashed with the following error: {error_message}"),
+        "NewtHLE crashed!",
+        &format!("NewtHLE crashed with the following error: {error_message}"),
         window.map(|win| &win.window),
         None,
     ) else {
         log!("Warning: Failed to show error message box; falling back to stderr only.");
-        eprintln!("touchHLE crashed: {}", error_message);
+        eprintln!("NewtHLE crashed: {}", error_message);
         return;
     };
 
