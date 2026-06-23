@@ -53,7 +53,7 @@ pub fn app_picker(options: Options) -> Result<(PathBuf, Vec<String>), String> {
     let apps_dir = paths::user_data_base_path().join(paths::APPS_DIR);
 
     let apps: Result<Vec<AppInfo>, String> = if !apps_dir.is_dir() {
-        Err(format!("The {} directory couldn't be found. Check you're running touchHLE from the right directory.", apps_dir.display()))
+        Err(format!("The {} directory couldn't be found. Check you're running NewtHLE from the right directory.", apps_dir.display()))
     } else {
         enumerate_apps(&apps_dir)
             .map_err(|err| {
@@ -297,7 +297,7 @@ fn show_app_picker_gui(
             "" => include_bytes!(concat!(env!("CARGO_MANIFEST_DIR"), "/res/icon.png")),
             "UNOFFICIAL" => include_bytes!(concat!(
                 env!("CARGO_MANIFEST_DIR"),
-                "/res/icon_unofficial.png"
+                "/res/icon_newthle.png"
             )),
             "PREVIEW" => {
                 include_bytes!(concat!(env!("CARGO_MANIFEST_DIR"), "/res/icon_preview.png"))
@@ -443,7 +443,7 @@ fn app_picker_inner(
     }
 
     let brand_color: id = if crate::branding() == "UNOFFICIAL" {
-        msg_class![env; UIColor redColor]
+        msg_class![env; UIColor orangeColor]
     } else {
         msg_class![env; UIColor grayColor]
     };
