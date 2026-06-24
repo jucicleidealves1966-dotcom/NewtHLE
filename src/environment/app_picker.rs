@@ -297,7 +297,7 @@ fn show_app_picker_gui(
             "" => include_bytes!(concat!(env!("CARGO_MANIFEST_DIR"), "/res/icon.png")),
             "UNOFFICIAL" => include_bytes!(concat!(
                 env!("CARGO_MANIFEST_DIR"),
-                "/res/icon_newthle.png"
+                "/res/icon_unofficial.png"
             )),
             "PREVIEW" => {
                 include_bytes!(concat!(env!("CARGO_MANIFEST_DIR"), "/res/icon_preview.png"))
