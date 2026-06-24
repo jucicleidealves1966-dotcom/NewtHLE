@@ -1,4 +1,4 @@
-name: Build HyperHLE
+name: Build NewtHLE
 
 on:
   workflow_dispatch:
@@ -106,7 +106,7 @@ jobs:
           
       - uses: actions/upload-artifact@main
         with:
-          name: HyperHLE_macOS_x86_64
+          name: NewtHLE_macOS_x86_64
           path: touchHLE.dmg
 
   build-linux:
@@ -176,7 +176,7 @@ jobs:
 
       - uses: actions/upload-artifact@main
         with:
-          name: HyperHLE_Linux_x86_64
+          name: NewtHLE_Linux_x86_64
           path: touchHLE_linux_bundle/
 
   build-android:
@@ -279,7 +279,7 @@ jobs:
 
     - uses: actions/upload-artifact@main
       with:  
-        name: HyperHLE_Android_AArch64  
+        name: NewtHLE_Android_AArch64  
         path: touchHLE.apk
 
   build-win:
@@ -323,7 +323,7 @@ jobs:
       
     - uses: actions/upload-artifact@main
       with:  
-        name: HyperHLE_Windows_x86_64  
+        name: NewtHLE_Windows_x86_64  
         path: touchHLE_windows_bundle/
 
   check-hyperhle-release:
@@ -368,17 +368,17 @@ jobs:
       - name: Download macOS artifact
         uses: actions/download-artifact@main
         with:
-          name: HyperHLE_macOS_x86_64
+          name: NewtHLE_macOS_x86_64
           path: artifacts/macos
       - name: Download Android artifact
         uses: actions/download-artifact@main
         with:
-          name: HyperHLE_Android_AArch64
+          name: NewtHLE_Android_AArch64
           path: artifacts/android
       - name: Download Windows artifact
         uses: actions/download-artifact@main
         with:
-          name: HyperHLE_Windows_x86_64
+          name: NewtHLE_Windows_x86_64
           path: artifacts/windows
       - name: Download Linux artifact
         uses: actions/download-artifact@main
@@ -402,5 +402,5 @@ jobs:
           name: HyperHLE ${{ needs.check-hyperhle-release.outputs.version }}
           body_path: release/RELEASE_NOTES.md
           files: |
-            release/HyperHLE_*.zip
+            release/NewtHLE_*.zip
           fail_on_unmatched_files: true
