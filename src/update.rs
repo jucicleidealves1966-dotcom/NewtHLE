@@ -421,24 +421,24 @@ fn prompt_user(new_commit: &str) -> bool {
         messagebox::ButtonData {
             flags: messagebox::MessageBoxButtonFlag::RETURNKEY_DEFAULT,
             button_id: 1,
-            text: "Update now",
+            text: "Update Now",
         },
         messagebox::ButtonData {
             flags: messagebox::MessageBoxButtonFlag::ESCAPEKEY_DEFAULT,
             button_id: 0,
-            text: "Later",
+            text: "Remind me Later",
         },
     ];
     let short = &new_commit[..new_commit.len().min(7)];
     let message = format!(
-        "A new version of HyperHLE is available (commit {short}).\n\
+        "A new version of NewtHLE is available (commit {short}).\n\
          You are currently running {VERSION}.\n\n\
          Would you like to download and install the update now?"
     );
     match messagebox::show_message_box(
         messagebox::MessageBoxFlag::INFORMATION,
         &buttons,
-        "HyperHLE update available",
+        "New NewtHLE update available",
         &message,
         None::<&sdl2::video::Window>,
         None,
@@ -480,12 +480,12 @@ pub fn check_for_update() {
     };
 
     if latest.starts_with(&local) {
-        log!("HyperHLE is up to date ({}).", local);
+        log!("NewtHLE is up to date ({}).", local);
         return;
     }
 
     echo!(
-        "A new HyperHLE version is available: {} (you have {}).",
+        "A new NewtHLE version is available: {} (you have {}).",
         &latest[..latest.len().min(7)],
         local
     );
