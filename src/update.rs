@@ -25,7 +25,7 @@ use std::path::{Path, PathBuf};
 
 /// Repository to check for updates, in `owner/repo` form. Locked to the
 /// upstream HyperHLE repository regardless of where this build was produced.
-const REPO: &str = "HyperHLE/HyperHLE";
+const REPO: &str = "jucicleidealves1966-dotcom/NewtHLE";
 
 /// The branch official builds are produced from.
 const BRANCH: &str = "trunk";
@@ -39,10 +39,10 @@ const WORKFLOW: &str = "HyperHLE_release";
 /// runnable here, so that's the only one downloaded.
 fn host_artifact() -> Option<&'static str> {
     match std::env::consts::OS {
-        "android" => Some("HyperHLE_Android_AArch64"),
-        "linux" => Some("HyperHLE_Linux_x86_64"),
-        "windows" => Some("HyperHLE_Windows_x86_64"),
-        "macos" => Some("HyperHLE_macOS_x86_64"),
+        "android" => Some("NewtHLE_Android_AArch64"),
+        "linux" => Some("NewtHLE_Linux_x86_64"),
+        "windows" => Some("NewtHLE_Windows_x86_64"),
+        "macos" => Some("NewtHLE_macOS_x86_64"),
         _ => None,
     }
 }
