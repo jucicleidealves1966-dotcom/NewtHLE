@@ -293,3 +293,6 @@ com.palmheroes.PalmHeroes: --landscape-right
 # Mutant Fridge Mayhem (issue #220)
 # App requests LandscapeRight; use landscape-right so the orientation matches.
 com.turner.mfm: --landscape-right
+
+# Mr. Goo
+com.tayasui.mrpoofree: --device-family=iphone --landscape-right --fullscreen --force-composition
